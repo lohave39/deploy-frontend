@@ -28,6 +28,7 @@ jobs:
                       # FRONTEND DEPLOYMENT
                       cd /home/ubuntu/react-app
                       git pull origin main
+                      sudo fuser -k 80/tcp || true
                       sudo docker stop react-app || true
                       sudo docker rm react-app || true
                       sudo docker build -t react-app:latest .
